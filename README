@@ -1,0 +1,8 @@
+****************************
+** RELEASE NOTES          **
+****************************
+ 
+* 1.0-SNAPSHOT
+
+- Data layer:
+        - Spring Data, HSQLDB.
