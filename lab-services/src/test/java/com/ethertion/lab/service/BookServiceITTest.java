@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.ethertion.lab.service;
 
 import com.ethertion.lab.domain.Book;
@@ -14,6 +9,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Optional;
+import javax.annotation.PostConstruct;
+import javax.transaction.Transactional;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -25,18 +22,26 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext-service.xml"})
-public class BookServiceTest {
+public class BookServiceITTest {
         
         @Autowired
         BookRepository bookRepository;
-
-        public BookServiceTest() {
+       
+        public BookServiceITTest() {
         }
+                     
+        @Before
+        public void init() throws Exception{
+                Book book = new Book();
+                book.setId(1L);
+                book.setTitle("Star Wars");
+                book = bookRepository.save(book);
+        }        
 
-        @Test
-        public void findByTitle() {
-                Optional<Book> book = bookRepository.findByTitle("Star Wars");
-                assertNotNull(book);
+        @Test        
+        public void findByTitle() {                
+                Optional<Book> opt = bookRepository.findByTitle("Star Wars");                
+                assertNotNull(opt.get());
         }
 
         public BookRepository getBookRepository() {
