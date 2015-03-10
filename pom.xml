@@ -27,6 +27,13 @@
                 
                 <dependencies>                     
                        
+                        <dependency>
+                                <groupId>io.spring.platform</groupId>
+                                <artifactId>platform-bom</artifactId>
+                                <version>1.1.1.RELEASE</version>
+                                <type>pom</type>
+                                <scope>import</scope>
+                        </dependency>
                         
                         <dependency>
                                 <groupId>org.hsqldb</groupId>
@@ -35,9 +42,9 @@
                         </dependency>            
                 
                         <dependency>
-                               <groupId>org.springframework</groupId>
-                               <artifactId>spring-test</artifactId>
-                               <version>4.1.5.RELEASE</version>
+                                <groupId>org.springframework</groupId>
+                                <artifactId>spring-test</artifactId>
+                                <version>4.1.5.RELEASE</version>
                         </dependency>
                         <dependency>
                                 <groupId>org.springframework</groupId>
@@ -55,7 +62,7 @@
                                 <version>1.7.10</version>
                         </dependency> 
                         
-                         <!--test-->
+                        <!--test-->
                         <dependency>
                                 <groupId>junit</groupId>
                                 <artifactId>junit</artifactId>
@@ -69,6 +76,10 @@
         <build>
                 <pluginManagement>
                         <plugins>
+                                <plugin>
+                                        <groupId>org.springframework.boot</groupId>
+                                        <artifactId>spring-boot-maven-plugin</artifactId>
+                                </plugin>
                                 <plugin>
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-clean-plugin</artifactId>
@@ -120,6 +131,11 @@
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-failsafe-plugin</artifactId>
                                         <version>2.16</version>
+                                        <configuration>
+                                                <includes>
+                                                        <include>**/*ITTest.java</include>
+                                                </includes>
+                                        </configuration>                                                
                                         <executions>
                                                 <execution>
                                                         <goals>
