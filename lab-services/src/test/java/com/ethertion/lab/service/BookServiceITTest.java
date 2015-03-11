@@ -9,7 +9,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Optional;
-import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +30,7 @@ public class BookServiceITTest {
         }
                      
         @Before
-        public void init() throws Exception{
+        public void setUp() throws Exception{
                 Book book = new Book();
                 book.setId(1L);
                 book.setTitle("Star Wars");
