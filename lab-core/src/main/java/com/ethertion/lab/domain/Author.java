@@ -1,5 +1,6 @@
 package com.ethertion.lab.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
@@ -16,10 +17,10 @@ import javax.persistence.OneToMany;
  * @author amiguel
  */
 @Entity
-public class Author {
+public class Author implements Serializable{
         
         private Long id;
-        private String fisrtName;
+        private String firstName;
         private String lastName;
         private List<Editorial> editorials = new ArrayList();
         
@@ -39,12 +40,12 @@ public class Author {
         }
 
         @Column(name = "firstName")
-        public String getFisrtName() {
-                return fisrtName;
+        public String getFirstName() {
+                return firstName;
         }
 
-        public void setFisrtName(String fisrtName) {
-                this.fisrtName = fisrtName;
+        public void setFirstName(String firstName) {
+                this.firstName = firstName;
         }
 
         @Column(name = "lastName")
@@ -56,7 +57,7 @@ public class Author {
                 this.lastName = lastName;
         }     
 
-        @ManyToMany(mappedBy = "authors")
+        @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
         public List<Editorial> getEditorials() {
                 return editorials;
         }

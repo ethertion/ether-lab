@@ -1,5 +1,6 @@
 package com.ethertion.lab.domain;
 
+import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,7 +15,7 @@ import javax.persistence.OneToOne;
  * @author amiguel
  */
 @Entity
-public class Book {
+public class Book implements Serializable{
         
         private Long id;
         private String title;        
