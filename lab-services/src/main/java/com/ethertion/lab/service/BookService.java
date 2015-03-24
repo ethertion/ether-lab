@@ -15,5 +15,6 @@ import java.util.Optional;
 public interface BookService {
         
         public Optional<Book> findByTitle(String title);
+        public Book save(String title);
         
 }

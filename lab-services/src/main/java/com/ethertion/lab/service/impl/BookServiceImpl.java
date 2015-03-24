@@ -21,6 +21,12 @@ public class BookServiceImpl implements BookService{
         public Optional<Book> findByTitle(String title){
                return bookRepository.findByTitle(title);
         }
-        
+
+        @Override
+        public Book save(String title) {
+                Book book = new Book();
+                book.setTitle(title);
+                return bookRepository.save(book);
+        }        
         
 }
