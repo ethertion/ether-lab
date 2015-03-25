@@ -45,7 +45,7 @@ public class Book implements Serializable{
                 this.title = title;
         } 
 
-        @OneToOne()
+        @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinColumn(name = "author_id")
         public Author getAuthor() {
                 return author;
@@ -53,6 +53,11 @@ public class Book implements Serializable{
 
         public void setAuthor(Author author) {
                 this.author = author;
-        }        
+        } 
+
+        @Override
+        public String toString() {
+                return "Book{" + "id=" + id + ", title=" + title + ", author=" + author + '}';
+        }
         
 }

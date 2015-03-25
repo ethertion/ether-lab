@@ -57,7 +57,7 @@ public class Author implements Serializable{
                 this.lastName = lastName;
         }     
 
-        @ManyToMany(fetch = FetchType.LAZY, mappedBy = "authors")
+        @ManyToMany(fetch = FetchType.EAGER, mappedBy = "authors")
         public List<Editorial> getEditorials() {
                 return editorials;
         }
