@@ -27,6 +27,11 @@
                 </dependency>
                 
                 <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-web</artifactId>                        
+                </dependency>
+
+                <dependency>
                         <groupId>org.springframework</groupId>
                         <artifactId>spring-webmvc</artifactId>                       
                         <type>jar</type>
@@ -59,6 +64,13 @@
                         <groupId>org.codehaus.jackson</groupId>
                         <artifactId>jackson-mapper-asl</artifactId>                        
                 </dependency>
+                
+                <!--test-->
+                <dependency>
+                        <groupId>junit</groupId>
+                        <artifactId>junit</artifactId>                        
+                        <scope>test</scope>
+                </dependency>  
         </dependencies>
 
 </project>
