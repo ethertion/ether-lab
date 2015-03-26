@@ -3,7 +3,7 @@
         <modelVersion>4.0.0</modelVersion>
         <groupId>com.ethertion.lab</groupId>
         <artifactId>lab-repository</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${repository.version}</version>
         <packaging>jar</packaging>
         <name>lab-repository-${version}</name>
     
@@ -18,7 +18,7 @@
                 <dependency>
                         <groupId>com.ethertion.lab</groupId>
                         <artifactId>lab-core</artifactId>
-                        <version>${project.parent.version}</version>
+                        <version>${core.version}</version>
                 </dependency> 
              
                 <!-- spring -->                                    

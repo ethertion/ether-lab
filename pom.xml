@@ -3,7 +3,7 @@
         <modelVersion>4.0.0</modelVersion>
         <groupId>com.ethertion.lab</groupId>
         <artifactId>lab</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${lab.version}</version>
         <packaging>pom</packaging>
         <name>lab-${version}</name>
         
@@ -12,6 +12,14 @@
                 <artifactId>ether-parent</artifactId>
                 <version>1.0-SNAPSHOT</version>
         </parent>
+        
+        <properties>
+                <lab.version>1.0-SNAPSHOT</lab.version>              
+                <core.version>${lab.version}</core.version>
+                <services.version>${lab.version}</services.version>
+                <repository.version>${lab.version}</repository.version>
+                <webapp.version>${lab.version}</webapp.version>
+        </properties>
     
         <modules>                
                 <module>lab-webapp</module>                

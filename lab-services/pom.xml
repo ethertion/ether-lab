@@ -3,7 +3,7 @@
         <modelVersion>4.0.0</modelVersion>
         <groupId>com.ethertion.lab</groupId>
         <artifactId>lab-services</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>${services.version}</version>
         <packaging>jar</packaging>
         <name>lab-services-${version}</name>
     
@@ -11,20 +11,19 @@
                 <groupId>com.ethertion.lab</groupId>
                 <artifactId>lab</artifactId>
                 <version>1.0-SNAPSHOT</version>
-        </parent>
-    
+        </parent>    
     
         <dependencies>    
                 
                 <dependency>
                         <groupId>com.ethertion.lab</groupId>
                         <artifactId>lab-repository</artifactId>
-                        <version>${project.parent.version}</version>
+                        <version>${repository.version}</version>
                 </dependency>
                 <dependency>
                         <groupId>com.ethertion.lab</groupId>
                         <artifactId>lab-core</artifactId>
-                        <version>${project.parent.version}</version>
+                        <version>${core.version}</version>
                 </dependency>             
                
                 <dependency>
