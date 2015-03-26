@@ -1,4 +1,4 @@
-A J2EE laboratory with the purpose of integrating software development technologies in order to learn how to build applications with the newest technologies.
+A J2EE laboratory with the purpose of integrating software development solutions in order to learn how to build applications with the newest technologies.
 
 ### 1. Introduction 
 The projects consists of a multi-tier modular Maven project that implements a J2EE application which emulates the behavior of a library. 
