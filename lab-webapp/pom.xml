@@ -4,7 +4,7 @@
 
         <groupId>com.ethertion.lab</groupId>
         <artifactId>lab-webapp</artifactId>
-        <version>${webapp.version}</version>
+        <version>1.0-SNAPSHOT</version>
         <packaging>war</packaging>
         <name>lab-webapp-${version}</name>
         
