@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd"
+      parent="base-flow" start-state="setUp">
+              
+        <action-state id="initial" >              
+                <evaluate expression="formAction.init" />        
+                <transition on="success" to="login"/>               
+                <transition on="error" to="final"/>
+        </action-state>
+        
+        <output name="authorized" />
+        <subflow-state id="login" subflow="login-flow">                
+                <transition on="success" to="isAuthorized"/> 
+        </subflow-state>
+        
+        <decision-state id="isAuthorized">
+                <if test="authorized == ''" then="not-authorized" else="book" />
+        </decision-state>
+        
+        <view-state id="not-authorized" view="notAuthorized">
+                <on-entry>
+                        <evaluate expression='formAction.exit'/>                        
+                </on-entry>
+                <transition on="success" to="final"/>                
+        </view-state>
+        
+        <view-state id="book" view="book" >               
+                <evaluate expression='formAction.book'/>
+                <transition on="success" to="end"/> 
+        </view-state>
+         
+        <view-state id="bye" view="bye" >
+                <on-entry>
+                        <evaluate expression='formAction.exit'/>
+                </on-entry>
+                <transition on="success" to="final"/>              
+        </view-state> 
+         
+        <end-state id="final" view="final" />        
+
+        <bean-import resource="library-beans.xml" />
+</flow>

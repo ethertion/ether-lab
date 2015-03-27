@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.4.xsd" 
+      start-state="setUp" abstract="true">
+        
+        <action-state id="setUp" >
+                <evaluate expression="formAction.setUp" />
+                <transition on="success" to="initial"/>
+        </action-state>
+        
+        <vieww-state id="initial" view="login">
+                <evaluate expression="formAction.authorize" result="flowScope.authorized"/>
+                <transition on="success" to="final"/>
+        </action-state>   
+	      
+        <end-state id="final" view="final" />   
+         
+        <bean-import resource="login-beans.xml"/>
+    
+</flow>
