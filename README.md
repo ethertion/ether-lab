@@ -7,6 +7,7 @@ The projects consists of a multi-tier modular Maven project that implements a J2
 - Maven 3.
 - Spring 4. 
 - JUnit 4.
+- ehCache
 
 ### 3. Architecture
 
