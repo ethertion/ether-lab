@@ -3,9 +3,9 @@
         <modelVersion>4.0.0</modelVersion>
         <groupId>com.ethertion.lab</groupId>
         <artifactId>lab-repository</artifactId>
-        <version>${repository.version}</version>
+        <version>1.0-SNAPSHOT</version>
         <packaging>jar</packaging>
-        <name>lab-repository-${version}</name>
+        <name>lab-repository-${project.version}</name>
     
         <parent>
                 <groupId>com.ethertion.lab</groupId>

@@ -1,60 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-        <modelVersion>4.0.0</modelVersion>
-        <groupId>com.ethertion.lab</groupId>
-        <artifactId>lab-services</artifactId>
-        <version>${services.version}</version>
-        <packaging>jar</packaging>
-        <name>lab-services-${version}</name>
-    
-        <parent>
-                <groupId>com.ethertion.lab</groupId>
-                <artifactId>lab</artifactId>
-                <version>1.0-SNAPSHOT</version>
-        </parent>    
-    
-        <dependencies>    
-                
-                <dependency>
-                        <groupId>com.ethertion.lab</groupId>
-                        <artifactId>lab-repository</artifactId>
-                        <version>${repository.version}</version>
-                </dependency>
-                <dependency>
-                        <groupId>com.ethertion.lab</groupId>
-                        <artifactId>lab-core</artifactId>
-                        <version>${core.version}</version>
-                </dependency>             
-               
-                <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-test</artifactId>
-                </dependency>
-                <dependency>
-                        <groupId>org.springframework</groupId>
-                        <artifactId>spring-context</artifactId>                     
-                </dependency>
-                             
-                <dependency>
-                        <groupId>org.hibernate</groupId>
-                        <artifactId>hibernate-core</artifactId>                        
-                </dependency>
-                <dependency>
-                        <groupId>org.hibernate</groupId>
-                        <artifactId>hibernate-entitymanager</artifactId>                       
-                </dependency>
-                <dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>                        
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ethertion.lab</groupId>
+	<artifactId>lab-services</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>lab-services-${project.version}</name>
+
+	<parent>
+		<groupId>com.ethertion.lab</groupId>
+		<artifactId>lab</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.ethertion.lab</groupId>
+			<artifactId>lab-repository</artifactId>
+			<version>${repository.version}</version>
 		</dependency>
-     
-                <!--test-->
-                <dependency>
-                        <groupId>junit</groupId>
-                        <artifactId>junit</artifactId>                        
-                        <scope>test</scope>
-                </dependency>   
-               
-        </dependencies>        
+		<dependency>
+			<groupId>com.ethertion.lab</groupId>
+			<artifactId>lab-core</artifactId>
+			<version>${core.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>			
+		</dependency>
+
+		<!--test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>			
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>			
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+	<build>
+	
+		<testResources>
+	      <testResource>
+	        <directory>src/main/resources</directory>
+	            <targetPath>${project.build.directory}/classes</targetPath>
+	            <includes>
+	                <include>applicationContext-service.xml</include>
+					<include>applicationService-ehcache.xml</include>
+					<include>log4j.properties</include>
+	            </includes>
+	      </testResource>
+	      <testResource>
+	        <directory>src/test/resources</directory>
+	            <targetPath>${project.build.directory}/classes</targetPath>
+	            <includes>	                
+					<include>log4j.properties</include>
+	            </includes>
+	      </testResource>
+	    </testResources>
+		
+	    <!-- resources>
+	        <resource>
+	            <directory>src/main/resources</directory>
+	            <targetPath>${project.build.directory}/classes</targetPath>
+	            <includes>
+	                <include>applicationContext-service.xml</include>
+					<include>applicationService-ehcache.xml</include>
+	            </includes>
+	        </resource>
+	    </resources-->
+    
+	</build>
 
 </project>
