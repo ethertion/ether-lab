@@ -9,6 +9,9 @@
 
     <context:component-scan base-package="com.ethertion.lab.service"/>
 
+    <!-- Caching enabled by @EnableCaching and Spring Boot -->
+    <!--import resource="classpath:applicationContext-cache.xml"/-->
+
     <import resource="classpath:applicationContext-repository.xml"/>
 
 </beans>

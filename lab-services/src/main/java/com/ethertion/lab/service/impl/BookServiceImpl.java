@@ -24,30 +24,34 @@ public class BookServiceImpl implements BookService {
 	@Autowired
 	BookRepository bookRepository;
 
-	@Cacheable("book")
 	@Override
+	@Cacheable("book")
 	public Book find(Long id) {
-		logger.debug("Finding by id ...");
+		logger.debug("Finding by id " + id);
 		return bookRepository.findOne(id);
 	}
 
 	@Override
 	public List<Book> findAll() {
+		logger.debug("Finding all books");
 		return bookRepository.findAll();
 	}
 
 	@Override
 	public Optional<Book> findByTitle(String title) {
+		logger.debug("Finding by tittle " + title);
 		return bookRepository.findByTitle(title);
 	}
 
 	@Override
 	public Book save(Book book) {
+		logger.debug("Saving book " + book.toString());
 		return bookRepository.save(book);
 	}
 
 	@Override
 	public Book save(String title) {
+		logger.debug("Saving book by title " + title);
 		Book book = new Book();
 		book.setTitle(title);
 		return bookRepository.save(book);
@@ -55,6 +59,7 @@ public class BookServiceImpl implements BookService {
 
 	@Override
 	public void delete(Long id) {
+		logger.debug("Deleting book " + id);
 		bookRepository.delete(id);
 	}
 
