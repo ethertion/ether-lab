@@ -78,4 +78,8 @@
                 </dependency>  
         </dependencies>
 
+        <build>
+                <finalName>lab-webapp</finalName>
+        </build>
+
 </project>

@@ -6,7 +6,7 @@ import java.io.Serializable;
  *
  * @author amiguel
  */
-public class Book implements Serializable{
+public class BookForm implements Serializable{
         
         private String title;
         private String author;
