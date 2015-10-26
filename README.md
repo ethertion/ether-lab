@@ -17,6 +17,7 @@ The projects consists of a multi-tier modular Maven project that implements a J2
 - **Service layer**: Spring
 - **Repository layer**: Spring Data JPA
 - **Boot**: Spring Boot
+- **Monitoring**: Spring Boot Actuator
 
 ### 4. Release notes
 
@@ -25,6 +26,7 @@ The projects consists of a multi-tier modular Maven project that implements a J2
 	- Publishes RESTful API to find, save and delete books at the library.
 	- Caches books when finding with ehCache.
 	- Integrates Spring Boot.
+	- Integrates Spring Boot Actuator for monitoring.
 
 ### 5. Installation
 
@@ -47,9 +49,11 @@ You can easily test the RESTful API by sending HTTP requests for all methods as 
 
 Now you can monitor your application with Spring Boot Actuator. Some default endpoints are available. Furthermore, you can create your customized endpoints. For instance, monitor your beans configuration at:
 
-* http://localhost:8084/manage/beans
+* <http://localhost:8084/manage/beans>
 
 Here you are the official documentation:
 
 * [Production read endpoints](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-endpoints)
+
+
 
