@@ -3,6 +3,22 @@ server:
     contextPath: /lab-webapp
     session-timeout: 10000
 
+management:
+    port: 8084
+    address: 127.0.0.1
+    context-path: /manage
+    security:
+          enabled: false
+          role: ADMIN
+    health:
+        status:
+        order: DOWN, OUT_OF_SERVICE, UNKNOWN, UP
+
+security:
+    user:
+        name: admin
+        password: admin
+
 logging:
     level:
         org.springframework.web: ERROR

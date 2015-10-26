@@ -42,3 +42,14 @@ You can easily test the RESTful API by sending HTTP requests for all methods as 
 * http://localhost:8080/lab-webapp/book/?title=Batman (GET) (Finds a book by title 'Batman')
 * http://localhost:8080/lab-webapp/book/ (POST) (Saves a book. Title and author parameters as input in json format are optional, i.e: {"title": "Batman", "author": "Bob Kane"})
 * http://localhost:8080/lab-webapp/book/1/ (DELETE) (Deletes the book with id 1)
+
+### 7. Monitoring your application with Spring Boot Actuator
+
+Now you can monitor your application with Spring Boot Actuator. Some default endpoints are available. Furthermore, you can create your customized endpoints. For instance, monitor your beans configuration at:
+
+* http://localhost:8084/manage/beans
+
+Here you are the official documentation:
+
+* [Production read endpoints](http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/#production-ready-endpoints)
+
